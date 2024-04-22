@@ -81,6 +81,40 @@ fi
 if test -z "$enable_hardening" && test -n "@no_harden@"; then
   enable_hardening=no
 fi
+fi
+
+if test -z "$enable_zmq" && test -n "@no_zmq@"; then
+  enable_zmq=no
+fi
+
+if test -z "$enable_usdt" && test -n "@no_usdt@"; then
+  enable_usdt=no
+fi
+
+if test "@host_os@" = darwin; then
+  BREW=no
+fi
+
+if test -z "$enable_hardening" && test -n "@no_harden@"; then
+  enable_hardening=no
+fi
+fi
+
+if test -z "$enable_zmq" && test -n "@no_zmq@"; then
+  enable_zmq=no
+fi
+
+if test -z "$enable_usdt" && test -n "@no_usdt@"; then
+  enable_usdt=no
+fi
+
+if test "@host_os@" = darwin; then
+  BREW=no
+fi
+
+if test -z "$enable_hardening" && test -n "@no_harden@"; then
+  enable_hardening=no
+fi
 
 PKG_CONFIG="$(which pkg-config) --static"
 
